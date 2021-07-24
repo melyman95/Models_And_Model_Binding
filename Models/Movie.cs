@@ -9,7 +9,7 @@ namespace Models_And_Model_Binding.Models
     /// <summary>
     /// Represents an individual student.
     /// </summary>
-    public class Student
+    public class Movie
     {
         /// <summary>
         /// Unique identifier for the student.

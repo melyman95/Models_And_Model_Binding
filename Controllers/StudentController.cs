@@ -20,7 +20,7 @@ namespace Models_And_Model_Binding.Controllers
         public IActionResult Add(IFormCollection form)
         {
             // Need server-side validation for all data
-            Student s = new Student();
+            Movie s = new Movie();
             s.FullName = form["full-name"];
             s.DateOfBirth = Convert.ToDateTime(form["date-of-birth"]);
             s.Email = form["email"];
@@ -40,7 +40,7 @@ namespace Models_And_Model_Binding.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddWithBinding(Student s)
+        public IActionResult AddWithBinding(Movie s)
         {
             if (ModelState.IsValid) // True if all validation in model passes
             {
