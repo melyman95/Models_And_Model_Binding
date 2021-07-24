@@ -5,39 +5,44 @@
 
 @if (ViewData["Added"] == null)
 {
-<div class="text-center">
-    <h1>Add New Movie</h1>
-    <div class="form-group">
-        <form method="post">
-            <label>Title</label>
-            <input class="form-control" type="text" name="movie-title" />
-            <br />
+    <div class="text-center">
+        <h1>Add New Movie</h1>
+        <div class="form-group">
+            <form method="post">
+                <label>Title</label>
+                <input class="form-control" type="text" name="movie-title" />
+                <br />
 
-            <label>Release Year</label>
-            <input class="form-control" type="text" name="release-year" />
-            <br />
+                <label>Release Year</label>
+                <input class="form-control" type="text" name="release-year" />
+                <br />
 
-            <label>Genre</label>
-            <input class="form-control" type="email" name="genre" />
-            <br />
+                <label>Genre</label>
+                <input class="form-control" type="text" name="genre" />
+                <br />
 
-            <label>Rating</label>
-            <input class="form-control" type="text" name="rating" />
-            <br />
+                <label>Rating</label>
+                <input class="form-control" type="text" name="rating" />
+                <br />
 
-            <label>Length</label>
-            <input class="form-control" type="text" name="length" />
-            <br />
+                <label>Length</label>
+                <input class="form-control" type="text" name="length" />
+                <br />
 
-            <input class="btn-outline-primary" type="submit" value="Add Movie" />
-        </form>
+                <input class="btn-outline-primary" type="submit" value="Add Movie" />
+            </form>
+        </div>
     </div>
-</div>
 }
-            else
-            {
-                <div class="alert alert-success">
-                    @ViewData["Added"]
-                </div>
-            }
+else
+{
+    <div class="alert alert-success">
+        @ViewData["Added"]
+    </div>
+    
+    @section Scripts
+    {
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
 

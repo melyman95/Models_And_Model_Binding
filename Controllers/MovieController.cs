@@ -28,8 +28,10 @@ namespace Models_And_Model_Binding.Controllers
             s.Length = form["length"];
 
             // Add to database
-            ViewData["Added"] = s.Title + " was added ";
-
+            if (ModelState.IsValid)
+            {
+                ViewData["Added"] = s.Title + " Year: " + s.ReleaseYear + "Rating: " + s.Rating + " was added ";
+            }
             return View();
         }
 
@@ -41,11 +43,11 @@ namespace Models_And_Model_Binding.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddWithBinding(Movie s)
+        public IActionResult AddWithBinding(Movie m)
         {
             if (ModelState.IsValid) // True if all validation in model passes
             {
-                ViewData["Message"] = $"{s.Title} was added";
+                ViewData["Message"] = m.Title + " Year: " + m.ReleaseYear + " Rating: " + m.Rating + " was added ";
             }
             return View();
         }
