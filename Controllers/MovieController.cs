@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Models_And_Model_Binding.Controllers
 {
-    public class StudentController : Controller
+    public class MovieController : Controller
     {
         [HttpGet] // when user navigates to URL
         public IActionResult Add()
@@ -20,14 +20,15 @@ namespace Models_And_Model_Binding.Controllers
         public IActionResult Add(IFormCollection form)
         {
             // Need server-side validation for all data
-            Student s = new Student();
-            s.FullName = form["full-name"];
-            s.DateOfBirth = Convert.ToDateTime(form["date-of-birth"]);
-            s.Email = form["email"];
-            s.Phone = form["phone-number"];
+            Movie s = new Movie();
+            s.Title = form["movie-title"];
+            s.ReleaseYear = form["release-year"];
+            s.Genre = form["genre"];
+            s.Rating = form["rating"];
+            s.Length = form["length"];
 
             // Add to database
-            ViewData["Added"] = s.FullName + " was added with an ID of 1";
+            ViewData["Added"] = s.Title + " was added ";
 
             return View();
         }
@@ -40,11 +41,11 @@ namespace Models_And_Model_Binding.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddWithBinding(Student s)
+        public IActionResult AddWithBinding(Movie s)
         {
             if (ModelState.IsValid) // True if all validation in model passes
             {
-                ViewData["Message"] = $"{s.FullName} was added";
+                ViewData["Message"] = $"{s.Title} was added";
             }
             return View();
         }
