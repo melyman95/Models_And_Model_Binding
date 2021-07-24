@@ -20,6 +20,7 @@ namespace Models_And_Model_Binding.Models
         /// The legal first and last name of the student, with middle initial.
         /// </summary>
         [Display(Name = "Full Name")]
+        [DataType(DataType.Text)]
         public string FullName { get; set; }
 
         /// <summary>
@@ -32,12 +33,14 @@ namespace Models_And_Model_Binding.Models
         /// Student (not personal) email address. Ends with @student.cptc.edu
         /// </summary>
         [Display(Name = "Email Address")]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
         /// <summary>
         /// Personal phone number of the student, could be home or cell
         /// </summary>
         [Display(Name = "Phone Number")]
+        [DataType(DataType.PhoneNumber)]
         public string Phone { get; set; }
     }
 }
