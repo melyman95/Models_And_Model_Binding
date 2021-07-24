@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -18,21 +19,25 @@ namespace Models_And_Model_Binding.Models
         /// <summary>
         /// The legal first and last name of the student, with middle initial.
         /// </summary>
+        [Display(Name = "Full Name")]
         public string FullName { get; set; }
 
         /// <summary>
         /// MM/DD/YYYY
         /// </summary>
+        [Display(Name = "Date Of Birth")]
         public DateTime DateOfBirth { get; set; }
 
         /// <summary>
         /// Student (not personal) email address. Ends with @student.cptc.edu
         /// </summary>
+        [Display(Name = "Email Address")]
         public string Email { get; set; }
 
         /// <summary>
         /// Personal phone number of the student, could be home or cell
         /// </summary>
+        [Display(Name = "Phone Number")]
         public string Phone { get; set; }
     }
 }

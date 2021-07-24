@@ -31,5 +31,10 @@ namespace Models_And_Model_Binding.Controllers
 
             return View();
         }
+
+        public IActionResult AddWithBinding()
+        {
+            return View();
+        }
     }
 }

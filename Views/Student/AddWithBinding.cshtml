@@ -1,0 +1,33 @@
+﻿@model Student
+@{
+    ViewData["Title"] = "AddWithBinding";
+}
+
+<h1>Add Student</h1>
+
+<div class="form-group">
+    <form method="post">
+        <label asp-for="FullName"></label>
+        <input asp-for="FullName" class="form-control" />
+        <span asp-validation-for="FullName"></span>
+        <br />
+
+        <label asp-for="DateOfBirth"></label>
+        <input asp-for="DateOfBirth" class="form-control" />
+        <span asp-validation-for="DateOfBirth"></span>
+        <br />
+
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email"></span>
+        <br />
+
+        <label asp-for="Phone"></label>
+        <input asp-for="Phone" class="form-control" />
+        <span asp-validation-for="Phone"></span>
+        <br />
+
+        <input class="btn-outline-primary" type="submit" value="Add Student" />
+
+    </form>
+</div>
