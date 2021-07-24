@@ -32,8 +32,20 @@ namespace Models_And_Model_Binding.Controllers
             return View();
         }
 
+        [HttpGet]
         public IActionResult AddWithBinding()
         {
+            
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddWithBinding(Student s)
+        {
+            if (ModelState.IsValid) // True if all validation in model passes
+            {
+                ViewData["Message"] = $"{s.FullName} was added";
+            }
             return View();
         }
     }
